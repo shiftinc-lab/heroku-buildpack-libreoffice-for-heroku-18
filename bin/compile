@@ -14,8 +14,8 @@ CACHE_DIR=$2 # the contents of CACHE_DIR are persisted between builds
 if [ -f $BUILD_DIR/LibreOfficeAppImage ] ; then
     DOWNLOAD=$(grep http $BUILD_DIR/LibreOfficeAppImage | head -n 1)
 else
-    DOWNLOAD="https://libreoffice.soluzioniopen.com/stable/standard/LibreOffice-fresh.standard-x86_64.AppImage"
-    # DOWNLOAD="https://libreoffice.soluzioniopen.com/stable/still/LibreOffice-still.basic-x86_64.AppImage"
+    # DOWNLOAD="https://libreoffice.soluzioniopen.com/stable/standard/LibreOffice-fresh.standard-x86_64.AppImage"
+    DOWNLOAD="https://libreoffice.soluzioniopen.com/stable/fresh/LibreOffice-fresh.basic-x86_64.AppImage"
 fi
 VERSION=$(echo $DOWNLOAD | grep -Poi "(?<=LibreOffice-)[^/]+(?=\.AppImage)")
 VERSION=${VERSION:-default} # avoid empty version if the grep fails to match
@@ -46,6 +46,6 @@ echo "export PATH=$ACTUAL_INSTALL_PATH/opt/$INSTALLED_VERSION/program:\$PATH" >>
 echo "export OFFICE_PATH=$ACTUAL_INSTALL_PATH/opt/$INSTALLED_VERSION" >> $PROFILE_PATH
 # Optimize slug size
 echo "Remove unused files/dirs"
-rm -rf $ACTUAL_INSTALL_PATH/opt/$INSTALLED_VERSION/help
-rm -rf $ACTUAL_INSTALL_PATH/opt/$INSTALLED_VERSION/readmes
-du -ha --max-depth 1 ~/vendor | sort -hr
+rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/help
+rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/readmes
+du -ha --max-depth 2 /app/vendor | sort -hr
