@@ -48,9 +48,9 @@ echo "export OFFICE_PATH=$ACTUAL_INSTALL_PATH/opt/$INSTALLED_VERSION" >> $PROFIL
 echo "Remove unused files/dirs"
 rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/help
 rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/readmes
-rm -rf ${OFFICE_PATH}/share/extensions
-rm -rf ${OFFICE_PATH}/share/gallery
-rm -rf ${OFFICE_PATH}/share/wizards
-rm -rf ${OFFICE_PATH}/share/template
+rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/share/extensions
+rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/share/gallery
+rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/share/wizards
+rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/share/template
 
 du -ha --max-depth 2 /app | sort -hr
