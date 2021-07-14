@@ -54,8 +54,8 @@ rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/share/wizards
 rm -rf $ACTUAL_INSTALL_PATH/$INSTALLED_VERSION/share/template
 
 # Copy libreoffice settings
-mkdir -p /usr/lib/libreoffice/share/registry/data
-cp ./registrymodifications.xcu /usr/lib/libreoffice/share/registry/data/registrymodifications-system-wide.xcu
+# mkdir -p /usr/lib/libreoffice/share/registry/data
+# cp ./registrymodifications.xcu /usr/lib/libreoffice/share/registry/data/registrymodifications-system-wide.xcu
 
 
 du -ha --max-depth 2 /app | sort -hr
